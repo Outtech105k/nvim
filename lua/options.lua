@@ -1,4 +1,6 @@
-local opt = vim.opt
+local v = vim
+local opt = v.opt
+local cmd = v.cmd
 
 -- 行番号の表示
 opt.number = true
@@ -22,4 +24,6 @@ opt.clipboard:append{'unnamedplus'}
 -- 不可視文字可視化
 opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
+
+cmd[[colorscheme molokai]]
 

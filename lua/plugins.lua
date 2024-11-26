@@ -1,6 +1,7 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    vim.fn.system({
+local v = vim
+local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (v.uv or v.loop).fs_stat(lazypath) then
+    v.fn.system({
         "git",
         "clone",
         "--filter=blob:none",
@@ -9,7 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         lazypath,
     })
 end
-vim.opt.rtp:prepend(lazypath)
+v.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     "nvim-tree/nvim-tree.lua",
@@ -18,7 +19,10 @@ require("lazy").setup({
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+        "echasnovski/mini.completion",
     },
+
+    "vim-scripts/ScrollColors",
 })
 
 require("nvim-tree").setup()
@@ -29,4 +33,4 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig")[server_name].setup({})
     end,
 })
-
+require("mini.completion").setup()
