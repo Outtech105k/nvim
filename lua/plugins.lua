@@ -23,6 +23,7 @@ require("lazy").setup({
     },
 
     "vim-scripts/ScrollColors",
+    "windwp/nvim-autopairs",
 })
 
 require("nvim-tree").setup()
