@@ -1,14 +1,18 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local v = vim
+local kmSet = v.keymap.set
 
 -- 行移動
-map('n', 'j', 'gj', opts)
-map('n', 'k', 'gk', opts)
-map('n', 'gj', 'j', opts)
-map('n', 'gk', 'k', opts)
+kmSet('n', 'j', 'gj')
+kmSet('n', 'k', 'gk')
+kmSet('n', 'gj', 'j')
+kmSet('n', 'gk', 'k')
 
+-- LSPの定義ジャンプ・参照検索・情報確認
+kmSet('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+kmSet('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+kmSet('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>')
 
-vim.keymap.set('n', 'gd', '<cmd>:lua vim.lsp.buf.definition()<CR>')
-vim.keymap.set('n', 'gr', '<cmd>:lua vim.lsp.buf.references()<CR>')
-vim.keymap.set('n', 'gh', '<cmd>:lua vim.lsp.buf.hover()<CR>')
+-- ターミナル設定
+kmSet('n', 'tt', '<cmd>terminal<CR>')
+kmSet('n', 'tx', '<cmd>belowright new<CR><cmd>terminal<CR>')
 
