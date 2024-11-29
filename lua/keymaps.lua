@@ -19,3 +19,4 @@ kmSet('n', 'tx', '<cmd>belowright new<CR><cmd>terminal<CR>')
 -- 
 
 local miniCompletion = require("mini.completion")
+

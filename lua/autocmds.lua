@@ -1,4 +1,5 @@
-local cmd = vim.cmd
+local v = vim
+local cmd = v.cmd
 
 -- ターミナルを開いたらに常にinsertモードに入る
 cmd("autocmd TermOpen * :startinsert")

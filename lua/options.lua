@@ -25,5 +25,10 @@ opt.clipboard:append{'unnamedplus'}
 opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
+-- カラースキーム
 cmd[[colorscheme molokai]]
 
+-- デフォルトでPowerShell
+local osName = v.loop.os_uname().sysname
+if osName == "Windows_NT" then
+end
