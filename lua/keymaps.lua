@@ -16,7 +16,3 @@ kmSet('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>')
 kmSet('n', 'tt', '<cmd>terminal<CR>')
 kmSet('n', 'tx', '<cmd>belowright new<CR><cmd>terminal<CR>')
 
--- 
-
-local miniCompletion = require("mini.completion")
-
