@@ -1,4 +1,6 @@
 local v = vim
+
+-- Lazy.nvimのインストール
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
     v.fn.system({
@@ -12,9 +14,12 @@ if not (v.uv or v.loop).fs_stat(lazypath) then
 end
 v.opt.rtp:prepend(lazypath)
 
+-- 各種プラグインインストール
 require("lazy").setup({
+    -- ファイルツリー
     "nvim-tree/nvim-tree.lua",
 
+    -- LSP
     {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -22,8 +27,15 @@ require("lazy").setup({
         "echasnovski/mini.completion",
     },
 
+    -- カラースキーム
     "vim-scripts/ScrollColors",
-    "windwp/nvim-autopairs",
+
+    -- 閉じ括弧追加
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
 })
 
 require("nvim-tree").setup()
@@ -35,4 +47,3 @@ require("mason-lspconfig").setup_handlers({
     end,
 })
 require("mini.completion").setup()
-

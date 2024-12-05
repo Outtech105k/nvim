@@ -29,6 +29,19 @@ opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 cmd[[colorscheme molokai]]
 
 -- デフォルトでPowerShell
+-- TODO: 追加
 local osName = v.loop.os_uname().sysname
 if osName == "Windows_NT" then
+    v.api.nvim_out_write("Hello Windows_NT NVim!\n")
+    v.opt.shell = "powershell.exe"
+elseif osName == "Linux" then
+    v.api.nvim_out_write("Hello Linux Nvim!\n")
+    v.opt.shell = "bash"
+elseif osName == "Darwin" then
+    v.api.nvim_out_write("Hello macOS Nvim!\n")
+    v.opt.shell = "zsh"
+else
+    v.api.nvim_out_write("Hello Nvim!\nUnknown OS\n")
+    v.opt.shell = "bash"
 end
+
