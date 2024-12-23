@@ -26,7 +26,7 @@ opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
 -- カラースキーム
-cmd[[colorscheme molokai]]
+cmd[[colorscheme sorbet]]
 
 -- デフォルトでPowerShell
 -- TODO: 追加
