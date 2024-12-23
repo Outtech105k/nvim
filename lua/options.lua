@@ -2,6 +2,9 @@ local v = vim
 local opt = v.opt
 local cmd = v.cmd
 
+-- 文字列の折り返しをしない
+opt.wrap = false
+
 -- 行番号の表示
 opt.number = true
 opt.relativenumber = true
@@ -29,10 +32,9 @@ opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 cmd[[colorscheme sorbet]]
 
 -- デフォルトでPowerShell
--- TODO: 追加
 local osName = v.loop.os_uname().sysname
 if osName == "Windows_NT" then
-    v.api.nvim_out_write("Hello Windows_NT NVim!\n")
+    v.api.nvim_out_write("Hello Windows_NT Nvim!\n")
     v.opt.shell = "powershell.exe"
 elseif osName == "Linux" then
     v.api.nvim_out_write("Hello Linux Nvim!\n")
