@@ -29,7 +29,7 @@ opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
 -- カラースキーム
-cmd[[colorscheme molokai]]
+cmd[[colorscheme sorbet]]
 
 -- デフォルトでPowerShell
 local osName = v.loop.os_uname().sysname
