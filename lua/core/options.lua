@@ -5,7 +5,7 @@ local cmd = v.cmd
 -- 文字列の折り返しをしない
 opt.wrap = false
 
--- 行番号の表示
+-- 行番号の表示(相対表示あり)
 opt.number = true
 opt.relativenumber = true
 
@@ -31,7 +31,7 @@ opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 -- カラースキーム
 cmd[[colorscheme sorbet]]
 
--- デフォルトでPowerShell
+-- OS別にシェルを設定(デバッグ用メッセージ出力含む)
 local osName = v.loop.os_uname().sysname
 if osName == "Windows_NT" then
     v.api.nvim_out_write("Hello Windows_NT Nvim!\n")
