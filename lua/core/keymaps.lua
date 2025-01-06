@@ -1,5 +1,4 @@
-local v = vim
-local kmSet = v.keymap.set
+local kmSet = vim.keymap.set
 
 -- LSPの定義ジャンプ・参照検索・情報確認
 kmSet('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
