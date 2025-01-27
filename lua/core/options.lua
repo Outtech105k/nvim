@@ -29,7 +29,7 @@ opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
 -- カラースキーム
-cmd[[colorscheme sorbet]]
+cmd[[colorscheme wildcharm]]
 
 -- OS別にシェルを設定(デバッグ用メッセージ出力含む)
 local osName = v.loop.os_uname().sysname
