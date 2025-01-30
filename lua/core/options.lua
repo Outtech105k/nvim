@@ -28,9 +28,6 @@ opt.clipboard:append{'unnamedplus'}
 opt.list = true
 opt.listchars = { tab = '>>', trail = '-', nbsp = '+' }
 
--- カラースキーム
-cmd[[colorscheme wildcharm]]
-
 -- OS別にシェルを設定(デバッグ用メッセージ出力含む)
 local osName = v.loop.os_uname().sysname
 if osName == "Windows_NT" then
