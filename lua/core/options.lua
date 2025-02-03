@@ -44,3 +44,6 @@ else
     v.opt.shell = "bash"
 end
 
+-- カラースキーム
+v.cmd[[colorscheme desert]]
+
