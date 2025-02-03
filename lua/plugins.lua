@@ -104,7 +104,25 @@ require("lazy").setup({
             }
         end
     },
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
+    { 'shaunsingh/nord.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      v.cmd[[colorscheme nord]]
+
+      -- Example config in lua
+      v.g.nord_contrast = true
+      v.g.nord_borders = false
+      v.g.nord_disable_background = true
+      v.g.nord_italic = false
+      v.g.nord_uniform_diff_background = true
+      v.g.nord_bold = false
+
+      -- Load the colorscheme
+      require('nord').set()
+    end,
+  },
 })
 
 require("nvim-tree").setup()
